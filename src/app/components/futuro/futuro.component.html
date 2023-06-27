@@ -1,0 +1,21 @@
+<h2>Temperatura próxima</h2>
+
+<form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="campo" [(ngModel)]="campo"  >    
+    <button type="button" class="btn btn-primary" (click)="buscador()">Search</button>
+</form>
+<input class="form-control me-2 col-md-2 custom-imput" type="date" name="fecha" [(ngModel)]="fecha" >
+
+<div class="row">
+        <div class="card mt-2 mb-2" style="width: 18rem;" [hidden]="ocultarDiv">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{dato.location.name}}</h4>
+                <h5 class="text-center">{{dato.location.country}}</h5>
+                <h6 class="text-center">Tem. max: {{dato.forecast.forecastday[0].day.maxtemp_c}} °C | {{dato.forecast.forecastday[0].day.maxtemp_f}} °F</h6>
+                <h6 class="text-center">Tem. min: {{dato.forecast.forecastday[0].day.mintemp_c}} °C | {{dato.forecast.forecastday[0].day.mintemp_f}} °F</h6>
+                <img class="mx-auto d-block" src="{{dato.forecast.forecastday[0].day.condition.icon}}"/>
+                <h6 class="text-center">Tem. media: {{dato.forecast.forecastday[0].day.avgtemp_c}} °C | {{dato.forecast.forecastday[0].day.avgtemp_f}} °F</h6>
+              </div>
+        </div>
+</div>
+

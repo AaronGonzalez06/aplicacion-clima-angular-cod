@@ -1,0 +1,17 @@
+<h2>Buscador</h2>
+
+<form class="d-flex custom">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="campo" [(ngModel)]="campo"  >
+    <button type="button" class="btn btn-primary" (click)="buscador()">Search</button>
+</form>
+
+<div class="row">
+        <div class="card mt-2 mb-2" style="width: 18rem;" [hidden]="ocultarDiv">
+            <div class="card-body">
+                <h4 class="card-title text-center">{{dato.location.name}}</h4>
+                <h5 class="text-center">{{dato.location.country}}</h5>
+                <h6 class="text-center">{{dato.current.temp_c}} °C | {{dato.current.temp_f}}°F</h6>
+                <img class="mx-auto d-block" src="{{dato.current.condition.icon}}"/>
+              </div>
+        </div>
+</div>
